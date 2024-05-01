@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium import webdriver
 from selenium.webdriver import ChromeOptions
 
 PATH = '/usr/bin/chromedriver'
@@ -10,6 +9,7 @@ browser = webdriver.Chrome(options=options)
 
 urls = ['http://www.aic.gov.ar/sitio/embalses','https://www.accuweather.com/en/ar/national/weather-radar']
 
+#AIC
 browser.get(urls[0])
 
 btn = browser.find_element('#mapa > div > div.gm-style > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(3) > div:nth-child(2)')
@@ -20,8 +20,10 @@ q_out = browser.find_element('#mapa > div > div.gm-style > div:nth-child(1) > di
 
 browser.close()
 
+#Accuwater
 browser.get(urls[1])
 
+browser.save_screenshot("screenshot.png")
 browser.quit()
 
 # #mapa > div > div.gm-style > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(3) > div:nth-child(2)
